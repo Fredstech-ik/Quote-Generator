@@ -10,7 +10,9 @@ export default function QuoteCard() {
 
   const fetchQuote = async () => {
     try {
-      const res = await fetch("https://YOUR-VERCEL-APP.vercel.app/api/quote");
+      const res = await fetch(
+        "https://quote-generator-eight-bay.vercel/api/quote"
+      );
       const data = await res.json();
       const q = Array.isArray(data) ? data[0] : data;
       setQuote({ quote: q.quote || q.text, author: q.author || "Unknown" });
